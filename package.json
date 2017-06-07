@@ -1,0 +1,60 @@
+{
+  "name": "jec-wildcat",
+  "version": "1.0.0",
+  "description": "JEC Wildcat - The archetype manager for the Glasscat Application Server.",
+  "main": "lib/com/onsoft/wildcat/index",
+  "types": "types/jec-wildcat.d.ts",
+  "scripts": {
+    "test": "mocha juta/tiger/run-unit-tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pechemann/jec-wildcat.git"
+  },
+  "keywords": [
+    "JEC",
+    "Wildcat",
+    "GlassCat",
+    "Archetypes",
+    "JavaScript",
+    "TypeScript",
+    "server",
+    "applications"
+  ],
+  "author": "Pascal ECHEMANN",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/pechemann/jec-wildcat/issues"
+  },
+  "homepage": "https://github.com/pechemann/jec-wildcat#readme",
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-ts": "^6.0.0-beta.15",
+    "grunt-typedoc": "^0.2.4",
+    "jec-juta": "^1.0.3",
+    "jec-tiger": "^1.0.1",
+    "mocha": "^3.3.0",
+    "rimraf": "^2.6.1",
+    "typedoc": "^0.6.0",
+    "typescript": "^2.3.2",
+    "typings": "^2.1.1"
+  },
+  "peerDependencies": {
+    "jec-commons": "^1.1.1",
+    "jec-commons-node": "^1.0.1",
+    "jec-juta": "^1.0.3",
+    "jec-tiger": "^1.0.1"
+  },
+  "dependencies": {
+    "jec-commons": "^1.1.1",
+    "jec-commons-node": "^1.0.1",
+    "moment": "^2.18.1",
+    "print-message": "^2.1.0",
+    "type-detect": "^4.0.3"
+  }
+}

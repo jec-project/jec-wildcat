@@ -1,0 +1,16 @@
+{
+  "gpm": {
+    "version":"1.0.0"
+  },
+  "project": {
+    "name": "Test",
+    "version":"1.0.0",
+    "title": "Test GlassCat Project Model",
+    "description": "Deploys a test GlassCat project without any dependencies.",
+    "author": "ONSOFT SYSTEMS"
+  },
+  "processedFiles": ["html", "json", "css", "ejs"],
+  "preInstall": [],
+  "postInstall": []
+}
+
