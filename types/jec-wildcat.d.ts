@@ -20,6 +20,21 @@ export class WildcatPropertiesBuilder {
     build(config: any): Map<string, any>;
 }
 
+export class WildcatRequestBuilder {
+    constructor();
+    private _gpm;
+    private _directory;
+    private _contextRoot;
+    private _projectName;
+    private _properties;
+    projectName(projectName: string): WildcatRequestBuilder;
+    gpm(gpm: string): WildcatRequestBuilder;
+    directory(directory: string): WildcatRequestBuilder;
+    contextRoot(contextRoot: string): WildcatRequestBuilder;
+    properties(props: any): WildcatRequestBuilder;
+    build(): WildcatRequest;
+}
+
 export class Gpm {
     constructor();
     version: string;
@@ -191,8 +206,6 @@ export class PathUtils {
     static readonly GPMS_DIRECTORY: string;
     static readonly ARCHETYPE_DIRECTORY: string;
 }
-
-
 
 export interface GpmValidator {
     validate(gpmConfig: any, callback: (err: GpmConfigError) => void): void;
