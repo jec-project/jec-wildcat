@@ -25,7 +25,7 @@ import * as utils from "../../../../../utils/test-utils/utilities/ArchetypePrope
 export class ArchetypePropertiesProcessorTest {
 
   @Test({
-    description: "Should set the right properties in the specified file"
+    description: "should set the right properties in the specified file"
   })
   public mapPropertiesTest():void {
     let processor:ArchetypePropertiesProcessor = new ArchetypePropertiesProcessor();

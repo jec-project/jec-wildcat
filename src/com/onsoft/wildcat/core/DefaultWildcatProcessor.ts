@@ -57,6 +57,12 @@ export class DefaultWildcatProcessor implements Wildcat {
    */
   private _taskManager:TaskManager = null;
 
+  /**
+   * Returns the reference to the archetype directory.
+   * 
+   */
+  private _archetypePath:string = null;
+
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
@@ -120,7 +126,7 @@ project model:
     this._taskManager = new TaskManager();
     this._taskManager.setContext(request, config);
     this._taskManager.addTask(new CreateProjectDirectoryTask());
-    this._taskManager.addTask(new DeployArchetypeTask());
+    this.createDeployArchetypeTask();
     optionalTask = properties.get("vscSettings");
     if(optionalTask !== null || optionalTask !== undefined ||
        optionalTask !== false) {
@@ -132,6 +138,15 @@ project model:
       this._taskManager.addTask(new DependenciesInstallTask());
     }
     this._taskManager.runTasks(callback);
+  }
+
+  /**
+   * Initializes the task that is responsible for deploying archetype.
+   */
+  private createDeployArchetypeTask():void {
+    let task:DeployArchetypeTask = new DeployArchetypeTask();
+    task.setArchetypePath(this._archetypePath);
+    this._taskManager.addTask(task);
   }
 
   /**
@@ -147,6 +162,25 @@ project model:
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
   //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Returns the reference to the archetypes directory.
+   * 
+   * @return {string} the reference to the archetypes directory.
+   */
+  public getArchetypePath():string {
+    return this._archetypePath;
+  }
+
+  /**
+   * Sets the reference to the archetypes directory.
+   * 
+   * @param {string} archetypePath the reference to the archetypes directory.
+   */
+  public setArchetypePath(archetypePath):void {
+    this._archetypePath = archetypePath;
+    this._loader.setArchetypePath(archetypePath);
+  }
 
   /**
    * @inheritDoc

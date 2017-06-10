@@ -22,22 +22,21 @@ import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/
  */
 
 // Utilities:
-const INVALID_PATH:string = process.cwd() + "utils/archetypes/invalid-gpm.json";
-const buildWildcatRequest:Function = function():WildcatRequest {
+export const ARCHETYPES_PATH:string = process.cwd() + "/utils/test-utils/archetypes/";
+const buildWildcatRequest:Function = function(gpm:string):WildcatRequest {
   let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
-  let request:WildcatRequest = builder.build();
+  let request:WildcatRequest = 
+      builder.directory(process.cwd() + ARCHETYPES_PATH)
+             .gpm(gpm)
+             .build();
   return request;
 };
 const buildValidWildcatRequest:Function = function():WildcatRequest {
-  let request:WildcatRequest = buildWildcatRequest();
-  request.directory = process.cwd() + "utils/archetypes/test";
-  request.gpm = "gpm.json";
+  let request:WildcatRequest = buildWildcatRequest("test");
   return request;
 };
 const buildInvalidWildcatRequest:Function = function():WildcatRequest {
-  let request:WildcatRequest = buildWildcatRequest();
-  request.directory = process.cwd() + "utils/archetypes";
-  request.gpm = "invalid-gpm.json";
+  let request:WildcatRequest = buildWildcatRequest("invalid");
   return request;
 };
 export const VALID_REQUEST:WildcatRequest = buildValidWildcatRequest();
@@ -49,3 +48,4 @@ export const TITLE:string = "Test GlassCat Project Model";
 export const DESCRIPTION:string = "Deploys a test GlassCat project without any dependencies.";
 export const AUTHOR:string = "ONSOFT SYSTEMS";
 export const PROCESSED_FILES:string[] = ["html", "json", "css", "ejs"];
+export const INVALID_PATH:string = "path/to/gpm";

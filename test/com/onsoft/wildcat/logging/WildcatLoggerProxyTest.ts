@@ -25,7 +25,7 @@ import { WildcatLoggerProxy } from "../../../../../src/com/onsoft/wildcat/loggin
 export class WildcatLoggerProxyTest {
 
   @Test({
-    description: "Should throw a singleton error when calling the constructor function"
+    description: "should throw a singleton error when calling the constructor function"
   })
   public singletonErrorTest():void {
     let buildInstance:Function = function():void {
@@ -35,7 +35,7 @@ export class WildcatLoggerProxyTest {
   }
   
   @Test({
-    description: "Should return a WildcatLoggerProxy instance"
+    description: "should return a WildcatLoggerProxy instance"
   })
   public getInstanceTest():void {
     let logger:LoggerProxy = WildcatLoggerProxy.getInstance();
@@ -43,7 +43,7 @@ export class WildcatLoggerProxyTest {
   }
   
   @Test({
-    description: "Should return a singleton reference"
+    description: "should return a singleton reference"
   })
   public validSingletonTest():void {
     let logger1:LoggerProxy = WildcatLoggerProxy.getInstance();

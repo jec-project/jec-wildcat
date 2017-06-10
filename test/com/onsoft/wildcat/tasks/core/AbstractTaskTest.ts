@@ -48,7 +48,7 @@ export class AbstractTaskTest {
   }
   
   @Test({
-    description: "Should invoke the success callback method"
+    description: "should invoke the success callback method"
   })
   public executeTest():void {
     this.task.execute((message:string)=> {

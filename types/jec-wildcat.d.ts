@@ -70,11 +70,15 @@ export class DefaultWildcatProcessor implements Wildcat {
     constructor();
     private _loader;
     private _taskManager;
+    private _archetypePath;
     private initObj();
     private sendRequestMessage(request);
     private sendConfigMessage(config);
     private manageTasks(request, config, callback);
+    private createDeployArchetypeTask();
     private sendMessage(message);
+    getArchetypePath(): string;
+    setArchetypePath(archetypePath: any): void;
     execute(request: WildcatRequest, callback: (err: any) => void): void;
 }
 
@@ -140,9 +144,12 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
     private _serverPath;
     private _extensionMap;
     private _propertiesProcessor;
+    private _archetypePath;
     private initObj();
     private buildFiles(archetypePaths, success, error?);
     setContext(request: WildcatRequest, config: GpmConfig): void;
+    setArchetypePath(archetypePath: string): void;
+    getArchetypePath(): string;
     execute(success: (message: string) => void, error?: (err: any) => void): void;
 }
 
@@ -191,8 +198,11 @@ export class GpmConfigLoader {
     constructor();
     private static readonly GPM_FILE_REF;
     private _parser;
+    private _archetypePath;
     private initObj();
-    private getGpmPath(request);
+    private resolveGpmPath(request);
+    getArchetypePath(): string;
+    setArchetypePath(archetypePath: any): void;
     load(request: WildcatRequest, success: (data: GpmConfig) => void, error: (err: JsonLoaderError) => void): void;
 }
 

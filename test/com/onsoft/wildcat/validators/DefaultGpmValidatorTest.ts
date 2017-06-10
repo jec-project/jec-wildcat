@@ -33,7 +33,7 @@ export class DefaultGpmValidatorTest {
   }
 
   @Test({
-    description: "Should validate valid config files"
+    description: "should validate valid config files"
   })
   public validateTest():void {
     this.validator.validate(utils.VALID_GPM_FILE, (err:GpmConfigError)=>{
@@ -42,7 +42,7 @@ export class DefaultGpmValidatorTest {
   }
   
   @Test({
-    description: "Should return an error when the 'gpm' property is missing"
+    description: "should return an error when the 'gpm' property is missing"
   })
   public validateMissingGpmTest():void {
     this.validator.validate(utils.MISSING_GPM_PROP, (err:GpmConfigError)=>{
@@ -51,7 +51,7 @@ export class DefaultGpmValidatorTest {
   }
   
   @Test({
-    description: "Should return an error when the 'gpm' property is not a POJO"
+    description: "should return an error when the 'gpm' property is not a POJO"
   })
   public validateInvalidGpmTest():void {
     this.validator.validate(utils.INVALID_GPM_PROP, (err:GpmConfigError)=>{
@@ -60,7 +60,7 @@ export class DefaultGpmValidatorTest {
   }
   
   @Test({
-    description: "Should return an error when the 'project' property is missing"
+    description: "should return an error when the 'project' property is missing"
   })
   public validateMissingPrijectTest():void {
     this.validator.validate(utils.MISSING_PROJECT_PROP, (err:GpmConfigError)=>{
@@ -69,7 +69,7 @@ export class DefaultGpmValidatorTest {
   }
   
   @Test({
-    description: "Should return an error when the 'project' property is not a POJO"
+    description: "should return an error when the 'project' property is not a POJO"
   })
   public validateInvalidProjectTest():void {
     this.validator.validate(utils.INVALID_PROJECT_PROP, (err:GpmConfigError)=>{

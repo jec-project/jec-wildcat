@@ -15,38 +15,41 @@
 //   limitations under the License.
 
 import { TestSuite, Test, BeforeClass, AfterClass, Async } from "jec-juta";
-import { expect } from "chai";
+import { expect, assert } from "chai";
 import { CreateProjectDirectoryTask } from "../../../../../src/com/onsoft/wildcat/tasks/CreateProjectDirectoryTask";
 import { Task } from "../../../../../src/com/onsoft/wildcat/tasks/core/Task";
 import * as utils from "../../../../../utils/test-utils/utilities/ProjectDirectoryTaskTestUtils";
 import * as fs from "fs";
 
 @TestSuite({
-  description: "Test the CreateProjectDirectoryTask task",
-  disabled: true
+  description: "Test the CreateProjectDirectoryTask task"
 })
 export class CreateProjectDirectoryTaskTest {
 
   @BeforeClass()
   public initTest():void {
-    utils.deleteTempFolder();
-    utils.createTempFolder();
+    utils.deleteProjectFolder(utils.CREATE_PROJECT_DIRECTORY);
   }
 
   @AfterClass()
   public resetTest():void {
-    utils.deleteTempFolder();
+    utils.deleteProjectFolder(utils.CREATE_PROJECT_DIRECTORY);
   }
 
   @Test({
-    description: "should create a new directory in the 'workspace' folder"
+    description: "should create a new directory in the 'workspace' folder",
+    timeout: 5000
   })
   public executeTest(@Async done:Function):void {
     let task:Task = new CreateProjectDirectoryTask();
-    task.setContext(utils.REQUEST, utils.GPM_CONFIG)
+    utils.REQUEST.directory = utils.CREATE_PROJECT_DIRECTORY;
+    task.setContext(utils.REQUEST, utils.GPM_CONFIG);
     task.execute((message:string)=> {
-      expect(fs.existsSync(utils.PATH + utils.DIRECTORY)).to.be.true;
+      expect(fs.existsSync(utils.PATH + utils.CREATE_PROJECT_DIRECTORY)).to.be.true;
       done();
+    },
+    (err:any)=> {
+      assert.fail(err, null, "test should not return an error");
     });
   }
 }

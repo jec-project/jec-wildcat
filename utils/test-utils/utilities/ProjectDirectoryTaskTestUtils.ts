@@ -15,10 +15,11 @@
 //   limitations under the License.
 
 import * as fs from "fs";
-import {PathUtils} from "../../../src/com/onsoft/wildcat/util/PathUtils";
+import { PathUtils } from "../../../src/com/onsoft/wildcat/util/PathUtils";
 import { WildcatRequest } from "../../../src/com/onsoft/wildcat/WildcatRequest";
 import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/WildcatRequestBuilder";
-const rimraf:any = require("rimraf");
+import { JecStringsEnum } from "jec-commons";
+const fse:any = require("fs-extra");
 
 /*!
  * This module constains utilities used by the CreateProjectDirectoryTaskTest
@@ -26,19 +27,45 @@ const rimraf:any = require("rimraf");
  */
 
 // Utilities:
-export const DIRECTORY:string = "testTaskDir";
+const PACKAGE:string = `{
+  "name": "Custom Project",
+  "version": "1.0.0",
+  "description": "Used by the DependenciesInstallTaskTest test class to deploy dependencies",
+  "author": "ONSOFT SYSTEMS",
+  "license": "MIT",
+  "dependencies": {
+    "@types/handlebars": "^4.0.31"
+  }
+}`;
+export const CREATE_PROJECT_DIRECTORY:string = "testCreateTaskDir";
+export const VSC_SETTINGS_DIRECTORY:string = "testVscTaskDir";
+export const DEPENDENCIES_INSTALL_DIRECTORY:string = "testDependenciesTaskDir";
+export const DEPLOY_INSTALL_DIRECTORY:string = "testDeployTaskDir";
+export const GPM_PATH:string = "test";
+export const DEFAULT_ARCHETYPE_PATH:string = process.cwd() + "/public/wildcat/test/archetype";
+export const ARCHETYPE_PATH:string = process.cwd() + "/utils/test-utils/archetypes";
 const buildWildcatRequest:Function = function():WildcatRequest {
   let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
   let request:WildcatRequest = builder.build();
-  request.directory = DIRECTORY;
   return request;
 };
 export const PATH:string = process.cwd() + PathUtils.WORKSPACE;
-export const createTempFolder:Function = function():void {
-  fs.mkdirSync(PATH);
+export const createProjectFolder:Function = function(dir:string):void {
+  fs.mkdirSync(PATH + dir);
 };
-export const deleteTempFolder:Function = function():void {
-  rimraf.sync(PATH);
+export const deleteProjectFolder:Function = function(dir:string):void {
+  fse.removeSync(PATH + dir);
+};
+export const deleteProjectFolderAsync:Function = function(dir:string):void {
+  fse.remove(PATH + dir);
+};
+export const createPackageFile:Function = function(dir:string):void {
+  let fd:number = 0;
+  let webbAppPath:string = PATH + dir + JecStringsEnum.WEB_APP;
+  fs.mkdirSync(webbAppPath);
+  fd = fs.openSync(webbAppPath + "package.json", "w");
+  fs.writeSync(fd, PACKAGE, 0);
+  fs.closeSync(fd);
 };
 export const REQUEST:WildcatRequest = buildWildcatRequest();
 export const GPM_CONFIG:any = {

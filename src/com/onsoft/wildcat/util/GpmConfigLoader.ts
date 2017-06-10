@@ -17,7 +17,7 @@
 import {GpmConfig} from "../context/GpmConfig";
 import {GpmConfigParser} from "../context/GpmConfigParser";
 import {WildcatRequest} from "../WildcatRequest";
-import {JsonLoader, JsonLoaderError} from "jec-commons";
+import {JsonLoader, JsonLoaderError, UrlStringsEnum} from "jec-commons";
 import {PathUtils} from "./PathUtils";
 
 /**
@@ -51,6 +51,12 @@ export class GpmConfigLoader {
    */
   private _parser:GpmConfigParser = null;
 
+  /**
+   * Returns the reference to the archetype directory.
+   * 
+   */
+  private _archetypePath:string = null;
+
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
@@ -68,14 +74,38 @@ export class GpmConfigLoader {
    * @param {WildcatRequest} request the <code>WildcatRequest</code> instance.
    * @return {string} the reference to the GPM directory.
    */
-  private getGpmPath(request:WildcatRequest):string {
-    let gpmPath:string = process.cwd() + PathUtils.GPMS_DIRECTORY + request.gpm;
+  private resolveGpmPath(request:WildcatRequest):string {
+    let gpmPath:string = this._archetypePath ?
+                         this._archetypePath :
+                         process.cwd() + PathUtils.GPMS_DIRECTORY;
+    if(gpmPath.lastIndexOf(UrlStringsEnum.SLASH) !== gpmPath.length - 1) {
+      gpmPath += UrlStringsEnum.SLASH;
+    }
+    gpmPath += request.gpm;
     return gpmPath;
   }
 
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
   //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Returns the reference to the archetype directory.
+   * 
+   * @return {string} the reference to the archetype directory.
+   */
+  public getArchetypePath():string {
+    return this._archetypePath;
+  }
+
+  /**
+   * Sets the reference to the archetype directory.
+   * 
+   * @param {string} archetypePath the reference to the archetype directory.
+   */
+  public setArchetypePath(archetypePath):void {
+    this._archetypePath = archetypePath;
+  }
 
   /**
    * Loads the GPM config file for the specified <code>WildcatRequest</code>
@@ -93,7 +123,7 @@ export class GpmConfigLoader {
   public load(request:WildcatRequest, success:(data:GpmConfig)=>void,
                                       error:(err:JsonLoaderError)=>void):void {
     let loader:JsonLoader = new JsonLoader();
-    let gpmPath:string = this.getGpmPath(request);
+    let gpmPath:string = this.resolveGpmPath(request);
     loader.load(
       gpmPath + GpmConfigLoader.GPM_FILE_REF,
       (data:any)=>{

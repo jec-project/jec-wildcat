@@ -31,28 +31,28 @@ export class ProjectTest {
   }
 
   @Test({
-    description: "Should have a 'version' property set to 'null'"
+    description: "should have a 'version' property set to 'null'"
   })
   public versionTest():void {
     expect(this.project).to.have.property("version", null);
   }
   
   @Test({
-    description: "Should have a 'title' property set to 'null'"
+    description: "should have a 'title' property set to 'null'"
   })
   public titleTest():void {
     expect(this.project).to.have.property("title", null);
   }
   
   @Test({
-    description: "Should have a 'description' property set to 'null'"
+    description: "should have a 'description' property set to 'null'"
   })
   public descriptionTest():void {
     expect(this.project).to.have.property("description", null);
   }
   
   @Test({
-    description: "Should have a 'author' property set to 'null'"
+    description: "should have a 'author' property set to 'null'"
   })
   public authorTest():void {
     expect(this.project).to.have.property("author", null);

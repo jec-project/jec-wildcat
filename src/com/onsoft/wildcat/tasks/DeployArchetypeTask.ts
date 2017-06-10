@@ -68,6 +68,11 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
    */
   private _propertiesProcessor:ArchetypePropertiesProcessor = null;
 
+  /**
+   * Overrides the default path to the archetype.
+   */
+  private _archetypePath:string = null;
+
   //////////////////////////////////////////////////////////////////////////////
   // Private methods
   //////////////////////////////////////////////////////////////////////////////
@@ -153,6 +158,24 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
     }
   }
 
+  /**
+   * Returns the resolved path to the archetype.
+   * 
+   * @return {string} the resolved path to the archetype.
+   */
+  private resolveArchetypePath():string {
+    let gpm:string = this.__request.gpm;
+    let archetypePath:string = this._archetypePath ?
+                               this._archetypePath :
+                               this._serverPath + PathUtils.GPMS_DIRECTORY;
+    if(archetypePath.lastIndexOf(UrlStringsEnum.SLASH)
+                                                 !== archetypePath.length - 1) {
+      archetypePath += UrlStringsEnum.SLASH;
+    }
+    archetypePath += gpm + PathUtils.ARCHETYPE_DIRECTORY;
+    return archetypePath;
+  }
+
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
   //////////////////////////////////////////////////////////////////////////////
@@ -174,12 +197,29 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
   }
 
   /**
+   * Overrides the default path to the archetype.
+   * 
+   * @param {string} archetypePath the new path to the archetype.
+   */
+  public setArchetypePath(archetypePath:string):void {
+    this._archetypePath = archetypePath;
+  }
+
+  /**
+   * Returns the path to the archetype.
+   * 
+   * @return {string} the path to the archetype.
+   */
+  public getArchetypePath():string {
+    return this._archetypePath;
+  }
+
+  /**
    * @inheritDoc
    */
   public execute(success:(message:string)=>void, error?:(err:any)=>void):void {
     let gpm:string = this.__request.gpm;
-    let archetypePath:string = this._serverPath + PathUtils.GPMS_DIRECTORY +
-                               gpm + PathUtils.ARCHETYPE_DIRECTORY;
+    let archetypePath:string = this.resolveArchetypePath();
     let archetypeFiles:ArchetypePath[] = new Array<ArchetypePath>();
     this._walker.process = (file:ArchetypePath)=> {
       archetypeFiles.push(file);

@@ -33,7 +33,7 @@ export class GpmConfigErrorTest {
   }
   
   @Test({
-    description: "Should return the same string as passed in the class constructor"
+    description: "should return the same string as passed in the class constructor"
   })
   public propertiesTest():void {
     let error:GpmConfigError = new GpmConfigError(utils.ERROR_MSG);

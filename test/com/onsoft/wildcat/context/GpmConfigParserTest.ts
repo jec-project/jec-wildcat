@@ -42,7 +42,7 @@ export class GpmConfigParserTest {
   }
 
   @Test({
-    description: "Should not return an error object when the GPM file is valid"
+    description: "should not return an error object when the GPM file is valid"
   })
   public parseValidTest():void {
     this.parser.parse(utils.GPM_FILE, (data:GpmConfig)=> {}, (err:any)=> {
@@ -51,7 +51,7 @@ export class GpmConfigParserTest {
   }
   
   @Test({
-    description: "Should  return an error object when the GPM file is not a POJO"
+    description: "should  return an error object when the GPM file is not a POJO"
   })
   public parseInvalidTest():void {
     let invalidObject:any = [];
@@ -61,7 +61,7 @@ export class GpmConfigParserTest {
   }
 
   @Test({
-    description: "Should create a valid 'GPM' instance"
+    description: "should create a valid 'GPM' instance"
   })
   public gpmTest():void {
     this.parser.parse(utils.GPM_FILE, (data:GpmConfig)=> {
@@ -71,7 +71,7 @@ export class GpmConfigParserTest {
   }
   
   @Test({
-    description: "Should create a valid 'Project' instance"
+    description: "should create a valid 'Project' instance"
   })
   public projectTest():void {
     this.parser.parse(utils.GPM_FILE, (data:GpmConfig)=> {
@@ -85,7 +85,7 @@ export class GpmConfigParserTest {
   }
   
   @Test({
-    description: "Should create an array of string that represents the type of files to be processed "
+    description: "should create an array of string that represents the type of files to be processed "
   })
   public processedFilesTest():void {
     this.parser.parse(utils.GPM_FILE, (data:GpmConfig)=> {

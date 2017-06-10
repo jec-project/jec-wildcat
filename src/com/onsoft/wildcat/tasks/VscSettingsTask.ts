@@ -87,11 +87,18 @@ export class VscSettingsTask extends AbstractTask implements Task {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "0.1.0",
-    "command": "tsc",
-    "isShellCommand": true,
-    "args": ["-p", "."],
-    "showOutput": "silent",
-    "problemMatcher": "$tsc"
+    "tasks": [
+        {
+            "taskName": "build",
+            "command": "tsc",
+            "args": ["-p", "./"],
+            "isShellCommand": true,
+            "isBackground": true,
+            "problemMatcher": "$tsc-watch",
+            "showOutput": "always",
+            "isBuildCommand": true
+        }
+    ]
 }`;
     return template;
   }

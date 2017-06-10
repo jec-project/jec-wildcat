@@ -31,14 +31,14 @@ export class ArchetypePathOperationTest {
   }
 
   @Test({
-    description: "Should have a 'pending' property set to '0'"
+    description: "should have a 'pending' property set to '0'"
   })
   public pendingTest():void {
     expect(this.operation).to.have.property("pending", 0);
   }
   
   @Test({
-    description: "Should have an 'originPath' property set to 'null'"
+    description: "should have an 'originPath' property set to 'null'"
   })
   public originPathTest():void {
     expect(this.operation).to.have.property("originPath", null);

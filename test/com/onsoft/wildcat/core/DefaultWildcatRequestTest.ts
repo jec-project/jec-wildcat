@@ -31,35 +31,35 @@ export class DefaultWildcatRequestTest {
   }
 
   @Test({
-    description: "Should have a 'gpm' property set to 'null'"
+    description: "should have a 'gpm' property set to 'null'"
   })
   public gpmTest():void {
     expect(this.request).to.have.property("gpm", null);
   }
   
   @Test({
-    description: "Should have a 'properties' property set to 'null'"
+    description: "should have a 'properties' property set to 'null'"
   })
   public propertiesTest():void {
     expect(this.request).to.have.property("properties", null);
   }
   
   @Test({
-    description: "Should have a 'projectName' property set to 'null'"
+    description: "should have a 'projectName' property set to 'null'"
   })
   public projectNameTest():void {
     expect(this.request).to.have.property("projectName", null);
   }
   
   @Test({
-    description: "Should have a 'contextRoot' property set to 'null'"
+    description: "should have a 'contextRoot' property set to 'null'"
   })
   public contextRootTest():void {
     expect(this.request).to.have.property("contextRoot", null);
   }
   
   @Test({
-    description: "Should have a 'directory' property set to 'null'"
+    description: "should have a 'directory' property set to 'null'"
   })
   public directoryTest():void {
     expect(this.request).to.have.property("directory", null);

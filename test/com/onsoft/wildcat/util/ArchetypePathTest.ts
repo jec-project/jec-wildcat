@@ -31,42 +31,42 @@ export class ArchetypePathTest {
   }
 
   @Test({
-    description: "Should have a 'file' property set to 'null'"
+    description: "should have a 'file' property set to 'null'"
   })
   public fileTest():void {
     expect(this.path).to.have.property("file", null);
   }
   
   @Test({
-    description: "Should have a 'targetPath' property set to 'null'"
+    description: "should have a 'targetPath' property set to 'null'"
   })
   public targetPathTest():void {
     expect(this.path).to.have.property("targetPath", null);
   }
   
   @Test({
-    description: "Should have a 'originPath' property set to 'null'"
+    description: "should have a 'originPath' property set to 'null'"
   })
   public originPathTest():void {
     expect(this.path).to.have.property("originPath", null);
   }
   
   @Test({
-    description: "Should have a 'type' property set to '-1'"
+    description: "should have a 'type' property set to '-1'"
   })
   publictypeTest():void {
     expect(this.path).to.have.property("type", -1);
   }
 
   @Test({
-    description: "Should have a 'stats' property set to 'null'"
+    description: "should have a 'stats' property set to 'null'"
   })
   public statsTest():void {
     expect(this.path).to.have.property("stats", null);
   }
   
   @Test({
-    description: "Should have a 'extension' property set to 'null'"
+    description: "should have a 'extension' property set to 'null'"
   })
   public extensionTest():void {
     expect(this.path).to.have.property("extension", null);

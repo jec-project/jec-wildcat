@@ -34,7 +34,7 @@ export class ArchetypePathWalkerTest {
   }
 
   @Test({
-    description: "Should walk through the complete folder structure",
+    description: "should walk through the complete folder structure",
     timeout: 10000
   })
   public walkTest(@Async done):void {
@@ -47,8 +47,8 @@ export class ArchetypePathWalkerTest {
         done();
       },
       (err:any)=> {
-        assert().fail(err, null, "Test should not fail");
+        assert.fail(err, null, "Test should not fail");
       }
-    )
+    );
   }
 }

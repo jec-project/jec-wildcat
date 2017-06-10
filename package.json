@@ -31,6 +31,7 @@
     "@types/mocha": "^2.2.41",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
+    "fs-extra": "^3.0.1",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-jsdoc": "^2.1.0",
@@ -39,7 +40,6 @@
     "jec-juta": "^1.0.3",
     "jec-tiger": "^1.0.1",
     "mocha": "^3.3.0",
-    "rimraf": "^2.6.1",
     "typedoc": "^0.6.0",
     "typescript": "^2.3.2",
     "typings": "^2.1.1"

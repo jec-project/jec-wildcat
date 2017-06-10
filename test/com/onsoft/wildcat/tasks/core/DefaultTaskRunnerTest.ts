@@ -41,7 +41,7 @@ export class DefaultTaskRunnerTest {
   }
 
   @Test({
-    description: "Should invoke the success callback method"
+    description: "should invoke the success callback method"
   })
   public runTest():void {
     this.taskRunner.run(this.task, (message:string)=> {
@@ -50,7 +50,7 @@ export class DefaultTaskRunnerTest {
   }
   
   @Test({
-    description: "Should call the execute method on the specified task"
+    description: "should call the execute method on the specified task"
   })
   public executeTaskTest():void {
     let spy:any = chai.spy.on(this.task, "execute");

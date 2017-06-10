@@ -14,20 +14,18 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test } from "jec-juta";
-import { expect } from "chai";
-import { Gpm } from "../../../../../src/com/onsoft/wildcat/context/Gpm";
+import { WildcatLoggerProxy } from "../../../src/com/onsoft/wildcat/logging/WildcatLoggerProxy";
+import { Logger, ConsoleLogger } from "jec-commons";
 
-@TestSuite({
-  description: "Test the Gpm class properties"
-})
-export class GpmTest {
+/*!
+ * This module contains utilities to work with the WildcatLoggerProxy singleton.
+ */
 
-  @Test({
-    description: "should have a 'version' property set to 'null'"
-  })
-  public contextRootTest():void {
-    let gpm:Gpm = new Gpm();
-    expect(gpm).to.have.property("version", null);
-  }
-}
+// Utilities:
+export const initLogger:Function = function():void {
+  let logger:Logger = new ConsoleLogger();
+  WildcatLoggerProxy.getInstance().setLogger(logger);
+};
+export const resetLogger:Function = function():void {
+  WildcatLoggerProxy.getInstance().setLogger(null);
+};

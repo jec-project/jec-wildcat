@@ -63,8 +63,12 @@ test/**/*.js
 utils/**/*.js
 
 #####################################
-# Test utilities
+# workspace
 #####################################
 
-# Ignore the workspace folder created by unit tests
-workspace
+# Ignore test files in workspace folder
+workspace/testCreateTaskDir
+workspace/testVscTaskDir
+workspace/testDependenciesTaskDir
+workspace/testDeployTaskDir
+workspace/test

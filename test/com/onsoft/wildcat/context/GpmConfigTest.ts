@@ -31,21 +31,21 @@ export class GpmConfigTest {
   }
 
   @Test({
-    description: "Should have a 'gpm' property set to 'null'"
+    description: "should have a 'gpm' property set to 'null'"
   })
   public gpmTest():void {
     expect(this.config).to.have.property("gpm", null);
   }
   
   @Test({
-    description: "Should have a 'project' property set to 'null'"
+    description: "should have a 'project' property set to 'null'"
   })
   public projectTest():void {
     expect(this.config).to.have.property("project", null);
   }
   
   @Test({
-    description: "Should have a 'processedFiles' property set to 'null'"
+    description: "should have a 'processedFiles' property set to 'null'"
   })
   public processedFilesTest():void {
     expect(this.config).to.have.property("processedFiles", null);
