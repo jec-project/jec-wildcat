@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass } from "jec-juta";
+import { TestSuite, Test, BeforeAll } from "jec-juta";
 import { expect } from "chai";
 import { TaskImpl } from "../../../../../../utils/test-utils/classes/TaskImpl";
 import * as utils from "../../../../../../utils/test-utils/utilities/TaskTestsUtils";
@@ -26,8 +26,8 @@ export class AbstractTaskTest {
 
   public task:TaskImpl = null;
 
-  @BeforeClass()
-  public initTask():void {
+  @BeforeAll()
+  public initTest():void {
     this.task = new TaskImpl();
   }
 

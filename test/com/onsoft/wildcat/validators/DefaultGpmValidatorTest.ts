@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass } from "jec-juta";
+import { TestSuite, Test, BeforeAll } from "jec-juta";
 import { expect } from "chai";
 import { DefaultGpmValidator } from "../../../../../src/com/onsoft/wildcat/validators/DefaultGpmValidator";
 import { GpmConfigError } from "../../../../../src/com/onsoft/wildcat/exceptions/GpmConfigError";
@@ -27,8 +27,8 @@ export class DefaultGpmValidatorTest {
 
   public validator:DefaultGpmValidator = null;
 
-  @BeforeClass()
-  public initOperation():void {
+  @BeforeAll()
+  public initTest():void {
     this.validator = new DefaultGpmValidator();
   }
 

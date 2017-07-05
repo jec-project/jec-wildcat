@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass } from "jec-juta";
+import { TestSuite, Test, BeforeAll } from "jec-juta";
 import { expect } from "chai";
 import { Project } from "../../../../../src/com/onsoft/wildcat/context/Project";
 
@@ -25,8 +25,8 @@ export class ProjectTest {
 
   public project:Project = null;
 
-  @BeforeClass()
-  public initProject():void {
+  @BeforeAll()
+  public initTest():void {
     this.project = new Project();
   }
 

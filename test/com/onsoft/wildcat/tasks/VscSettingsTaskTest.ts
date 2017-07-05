@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass, AfterClass, Async } from "jec-juta";
+import { TestSuite, Test, BeforeAll, AfterAll, Async } from "jec-juta";
 import { expect, assert } from "chai";
 import { VscSettingsTask } from "../../../../../src/com/onsoft/wildcat/tasks/VscSettingsTask";
 import { Task } from "../../../../../src/com/onsoft/wildcat/tasks/core/Task";
@@ -27,13 +27,13 @@ import { UrlStringsEnum } from "jec-commons";
 })
 export class VscSettingsTaskTest {
   
-  @BeforeClass()
+  @BeforeAll()
   public initTest():void {
     utils.deleteProjectFolder(utils.VSC_SETTINGS_DIRECTORY);
     utils.createProjectFolder(utils.VSC_SETTINGS_DIRECTORY);
   }
 
-  @AfterClass()
+  @AfterAll()
   public resetTest():void {
     utils.deleteProjectFolder(utils.VSC_SETTINGS_DIRECTORY);
   }

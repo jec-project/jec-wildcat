@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass, TestSorters, Async } from "jec-juta";
+import { TestSuite, Test, BeforeAll, TestSorters, Async } from "jec-juta";
 import { JsonLoaderError } from "jec-commons";
 import { expect, assert } from "chai";
 import { GpmConfigLoader } from "../../../../../src/com/onsoft/wildcat/util/GpmConfigLoader";
@@ -29,8 +29,8 @@ export class GpmConfigLoaderTest {
 
   public loader:GpmConfigLoader = null;
 
-  @BeforeClass()
-  public initLoader():void {
+  @BeforeAll()
+  public initTest():void {
     this.loader = new GpmConfigLoader();
   }
 

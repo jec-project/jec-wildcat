@@ -10,5 +10,4 @@ declare module "jec-wildcat" {
 import { LoggerProxy, AbstractLoggerProxy, FileStats, JsonLoaderError } from "jec-commons";
 
 /*PLACEHOLDER*/
-
 }

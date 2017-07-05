@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass } from "jec-juta";
+import { TestSuite, Test, BeforeAll } from "jec-juta";
 import { expect } from "chai";
 import { DefaultWildcatRequest } from "../../../../../src/com/onsoft/wildcat/core/DefaultWildcatRequest";
 
@@ -25,8 +25,8 @@ export class DefaultWildcatRequestTest {
 
   public request:DefaultWildcatRequest = null;
 
-  @BeforeClass()
-  public initProject():void {
+  @BeforeAll()
+  public initTest():void {
     this.request = new DefaultWildcatRequest();
   }
 

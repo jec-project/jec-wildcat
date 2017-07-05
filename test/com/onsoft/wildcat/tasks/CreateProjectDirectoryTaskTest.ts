@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass, AfterClass, Async } from "jec-juta";
+import { TestSuite, Test, BeforeAll, AfterAll, Async } from "jec-juta";
 import { expect, assert } from "chai";
 import { CreateProjectDirectoryTask } from "../../../../../src/com/onsoft/wildcat/tasks/CreateProjectDirectoryTask";
 import { Task } from "../../../../../src/com/onsoft/wildcat/tasks/core/Task";
@@ -26,12 +26,12 @@ import * as fs from "fs";
 })
 export class CreateProjectDirectoryTaskTest {
 
-  @BeforeClass()
+  @BeforeAll()
   public initTest():void {
     utils.deleteProjectFolder(utils.CREATE_PROJECT_DIRECTORY);
   }
 
-  @AfterClass()
+  @AfterAll()
   public resetTest():void {
     utils.deleteProjectFolder(utils.CREATE_PROJECT_DIRECTORY);
   }

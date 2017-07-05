@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass } from "jec-juta";
+import { TestSuite, Test, BeforeAll } from "jec-juta";
 import { expect } from "chai";
 import { WildcatPropertiesBuilder } from "../../../../../src/com/onsoft/wildcat/builders/WildcatPropertiesBuilder";
 import * as utils from "../../../../../utils/test-utils/utilities/WildcatPropertiesBuilderTestUtils";
@@ -26,7 +26,7 @@ export class WildcatPropertiesBuilderTest {
 
   public result:Map<string, any> = null;
 
-  @BeforeClass()
+  @BeforeAll()
   public init():void {
     let builder:WildcatPropertiesBuilder = new WildcatPropertiesBuilder();
     this.result = builder.build(utils.PROPERTIES);

@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass } from "jec-juta";
+import { TestSuite, Test, BeforeAll } from "jec-juta";
 import * as chai from "chai";
 import * as spies from "chai-spies";
 import { TaskImpl } from "../../../../../../utils/test-utils/classes/TaskImpl";
@@ -34,8 +34,8 @@ export class DefaultTaskRunnerTest {
   public task:TaskImpl = null;
   public taskRunner:TaskRunner = null;
 
-  @BeforeClass()
-  public initTask():void {
+  @BeforeAll()
+  public initTest():void {
     this.task = new TaskImpl();
     this.taskRunner = new DefaultTaskRunner();
   }

@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, Before, After, BeforeClass, AfterClass, Async } from "jec-juta";
+import { TestSuite, Test, Before, After, BeforeAll, AfterAll, Async } from "jec-juta";
 import { expect, assert } from "chai";
 import { DefaultWildcatProcessor } from "../../../../../src/com/onsoft/wildcat/core/DefaultWildcatProcessor";
 import { ArchetypePath } from "../../../../../src/com/onsoft/wildcat/util/ArchetypePath";
@@ -35,7 +35,7 @@ export class DefaultWildcatProcessorTest {
     expect(utils.FILES.indexOf(ref)).not.to.equal(-1);
   }
 
-  @BeforeClass()
+  @BeforeAll()
   public initTest():void {
     loggerUtils.initLogger();
     taskUtils.deleteProjectFolder(utils.ARCHETYPE_DEST_FOLDER);
@@ -52,7 +52,7 @@ export class DefaultWildcatProcessorTest {
     this.processor.setArchetypePath(utils.ARCHETYPE_TEST_FOLDER);
   }
 
-  @AfterClass()
+  @AfterAll()
   public resetTest():void {
     loggerUtils.resetLogger();
     taskUtils.deleteProjectFolderAsync(utils.ARCHETYPE_TEST_FOLDER);

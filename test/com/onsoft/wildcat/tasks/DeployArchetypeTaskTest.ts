@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import { TestSuite, Test, BeforeClass, AfterClass, Async, Before, After, TestSorters } from "jec-juta";
+import { TestSuite, Test, BeforeAll, AfterAll, Async, Before, After, TestSorters } from "jec-juta";
 import { expect, assert } from "chai";
 import { DeployArchetypeTask } from "../../../../../src/com/onsoft/wildcat/tasks/DeployArchetypeTask";
 import { ArchetypePath } from "../../../../../src/com/onsoft/wildcat/util/ArchetypePath";
@@ -36,13 +36,13 @@ export class DeployArchetypeTaskTest {
     expect(walkerUtils.FILES.indexOf(ref)).not.to.equal(-1);
   }
 
-  @BeforeClass()
+  @BeforeAll()
   public initTest():void {
     utils.deleteProjectFolder(utils.DEPLOY_INSTALL_DIRECTORY);
     utils.createProjectFolder(utils.DEPLOY_INSTALL_DIRECTORY);
   }
 
-  @AfterClass()
+  @AfterAll()
   public resetTest():void {
     utils.deleteProjectFolderAsync(utils.DEPLOY_INSTALL_DIRECTORY);
   }
