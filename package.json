@@ -1,6 +1,6 @@
 {
   "name": "jec-wildcat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JEC Wildcat - The archetype manager for the Glasscat Application Server.",
   "main": "lib/com/onsoft/wildcat/index",
   "types": "types/jec-wildcat.d.ts",
@@ -45,14 +45,14 @@
     "typings": "^2.1.1"
   },
   "peerDependencies": {
-    "jec-commons": "^1.1.1",
-    "jec-commons-node": "^1.0.1",
-    "jec-juta": "^1.1.0",
-    "jec-tiger": "^1.1.0"
+    "jec-commons": "^1.1.2",
+    "jec-commons-node": "^1.0.2",
+    "jec-juta": "^1.1.1",
+    "jec-tiger": "^1.1.1"
   },
   "dependencies": {
-    "jec-commons": "^1.1.1",
-    "jec-commons-node": "^1.0.1",
+    "jec-commons": "^1.1.2",
+    "jec-commons-node": "^1.0.2",
     "moment": "^2.18.1",
     "print-message": "^2.1.0",
     "type-detect": "^4.0.3"
