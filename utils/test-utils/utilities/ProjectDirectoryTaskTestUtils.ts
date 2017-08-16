@@ -19,7 +19,7 @@ import { PathUtils } from "../../../src/com/onsoft/wildcat/util/PathUtils";
 import { WildcatRequest } from "../../../src/com/onsoft/wildcat/WildcatRequest";
 import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/WildcatRequestBuilder";
 import { JecStringsEnum } from "jec-commons";
-const fse:any = require("fs-extra");
+import * as fse from "fs-extra";
 
 /*!
  * This module constains utilities used by the CreateProjectDirectoryTaskTest
