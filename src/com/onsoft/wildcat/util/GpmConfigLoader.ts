@@ -21,7 +21,7 @@ import {JsonLoader, JsonLoaderError, UrlStringsEnum} from "jec-commons";
 import {PathUtils} from "./PathUtils";
 
 /**
- * A helper class for loading Glasscat Project Model (GPM) files.
+ * A helper class for loading GlassCat Project Model (GPM) files.
  */
 export class GpmConfigLoader {
 

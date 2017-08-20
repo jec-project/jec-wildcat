@@ -44,7 +44,7 @@ The documentation generator is [TypeDoc](http://typedoc.org/)
 
 ## Update Release Notes
 
-**Current stable release:** [1.0.3](CHANGELOG.md#jec-wildcat-1.0.3)
+**Current stable release:** [1.0.4](CHANGELOG.md#jec-wildcat-1.0.4)
  
 For a complete listing of release notes for all JEC Wildcat update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 
