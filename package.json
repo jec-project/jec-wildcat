@@ -1,6 +1,6 @@
 {
   "name": "jec-wildcat",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "JEC Wildcat - The archetype manager for the GlassCat Application Server.",
   "main": "dist/com/onsoft/jec-wildcat-index",
   "types": "types/jec-wildcat.d.ts",
@@ -26,29 +26,29 @@
   "bugs": {
     "url": "https://github.com/pechemann/jec-wildcat/issues"
   },
+  "dependencies": {
+    "jec-commons": "^1.1.8",
+    "jec-commons-node": "^1.0.7",
+    "moment": "^2.18.1",
+    "print-message": "^2.1.0",
+    "type-detect": "^4.0.3"
+  },
   "homepage": "https://github.com/pechemann/jec-wildcat#readme",
   "devDependencies": {
     "@types/fs-extra": "^4.0.0",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
     "fs-extra": "^3.0.1",
-    "jec-juta": "^1.1.6",
-    "jec-tiger": "^1.1.7",
-    "mocha": "^3.3.0",
-    "typedoc": "^0.8.0",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-mocha-test": "^0.13.2",
-    "grunt-ts": "^6.0.0-beta.16",
+    "grunt-ts": "^6.0.0-beta.17",
     "grunt-typedoc": "^0.2.4",
-    "typescript": "^2.5.1"
-  },
-  "dependencies": {
-    "jec-commons": "^1.1.7",
-    "jec-commons-node": "^1.0.6",
-    "moment": "^2.18.1",
-    "print-message": "^2.1.0",
-    "type-detect": "^4.0.3"
+    "jec-juta": "^1.1.7",
+    "jec-tiger": "^1.1.8",
+    "mocha": "^3.3.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.6.2"
   }
 }

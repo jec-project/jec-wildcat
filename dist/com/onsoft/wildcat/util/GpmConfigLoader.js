@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const GpmConfigParser_1 = require("../context/GpmConfigParser");
 const jec_commons_1 = require("jec-commons");
+const jec_commons_node_1 = require("jec-commons-node");
 const PathUtils_1 = require("./PathUtils");
 class GpmConfigLoader {
     constructor() {
@@ -29,7 +30,7 @@ class GpmConfigLoader {
         this._archetypePath = archetypePath;
     }
     load(request, success, error) {
-        let loader = new jec_commons_1.JsonLoader();
+        let loader = new jec_commons_node_1.DefaultJsonLoader();
         let gpmPath = this.resolveGpmPath(request);
         loader.load(gpmPath + GpmConfigLoader.GPM_FILE_REF, (data) => {
             this._parser.parse(data, success, error);

@@ -18,6 +18,7 @@ import {GpmConfig} from "../context/GpmConfig";
 import {GpmConfigParser} from "../context/GpmConfigParser";
 import {WildcatRequest} from "../WildcatRequest";
 import {JsonLoader, JsonLoaderError, UrlStringsEnum} from "jec-commons";
+import {DefaultJsonLoader} from "jec-commons-node";
 import {PathUtils} from "./PathUtils";
 
 /**
@@ -122,7 +123,7 @@ export class GpmConfigLoader {
    */
   public load(request:WildcatRequest, success:(data:GpmConfig)=>void,
                                       error:(err:JsonLoaderError)=>void):void {
-    let loader:JsonLoader = new JsonLoader();
+    let loader:JsonLoader = new DefaultJsonLoader();
     let gpmPath:string = this.resolveGpmPath(request);
     loader.load(
       gpmPath + GpmConfigLoader.GPM_FILE_REF,

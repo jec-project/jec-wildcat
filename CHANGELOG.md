@@ -1,5 +1,15 @@
 # JEC Wildcat Project: Update Release Notes
 
+<a name="jec-wildcat-1.0.7"></a>
+## **1.0.7** (2017-12-26)
+
+### Bug Fixes
+
+### Features
+
+- Dependencies upgrade
+- Fixing `jec-commons` module break changes
+
 <a name="jec-wildcat-1.0.6"></a>
 ## **1.0.6** (2017-09-06)
 
