@@ -4,7 +4,7 @@ const DefaultWildcatProcessor_1 = require("../core/DefaultWildcatProcessor");
 class WildcatBuilder {
     constructor() { }
     build() {
-        let wildcat = new DefaultWildcatProcessor_1.DefaultWildcatProcessor();
+        const wildcat = new DefaultWildcatProcessor_1.DefaultWildcatProcessor();
         return wildcat;
     }
 }

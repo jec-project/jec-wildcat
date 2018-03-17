@@ -81,7 +81,7 @@ export class DefaultWildcatProcessor implements Wildcat {
    * @param {WildcatRequest} request the request for the current GPM.
    */
   private sendRequestMessage(request:WildcatRequest):void {
-    let msg:string =
+    const msg:string =
 `request properties:
 - gpm=${request.gpm}
 - projectName=${request.projectName}
@@ -96,8 +96,8 @@ export class DefaultWildcatProcessor implements Wildcat {
    * @param {GpmConfig} config the loaded configuration for the current GPM.
    */
   private sendConfigMessage(config:GpmConfig):void {
-    let project:Project = config.project;
-    let msg:string =
+    const project:Project = config.project;
+    const msg:string =
 `GPM config loaded:
 - GPM version=${config.gpm.version}
 project model:
@@ -121,8 +121,8 @@ project model:
    */
   private manageTasks(request:WildcatRequest, config:GpmConfig,
                                                 callback:(err:any)=>void):void {
+    const properties:Map<string, any> = request.properties;
     let optionalTask:boolean = false;
-    let properties:Map<string, any> = request.properties;
     this._taskManager = new TaskManager();
     this._taskManager.setContext(request, config);
     this._taskManager.addTask(new CreateProjectDirectoryTask());
@@ -144,7 +144,7 @@ project model:
    * Initializes the task that is responsible for deploying archetype.
    */
   private createDeployArchetypeTask():void {
-    let task:DeployArchetypeTask = new DeployArchetypeTask();
+    const task:DeployArchetypeTask = new DeployArchetypeTask();
     task.setArchetypePath(this._archetypePath);
     this._taskManager.addTask(task);
   }

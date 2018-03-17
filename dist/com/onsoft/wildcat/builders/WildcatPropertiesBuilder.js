@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class WildcatPropertiesBuilder {
     constructor() { }
     build(config) {
-        let propsMap = new Map();
+        const propsMap = new Map();
         let prop = null;
         for (prop in config) {
             if (prop !== WildcatPropertiesBuilder.GPM &&

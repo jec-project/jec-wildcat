@@ -41,7 +41,7 @@ export class WildcatBuilder {
    * @return {Wildcat} a new <code>Wildcat</code> instance.
    */
   public build():Wildcat {
-    let wildcat:Wildcat = new DefaultWildcatProcessor();
+    const wildcat:Wildcat = new DefaultWildcatProcessor();
     return wildcat;
   }
 };

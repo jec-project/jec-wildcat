@@ -24,11 +24,11 @@ class TaskManager {
         this.sendMessage("new task added to task manager:" + task.constructor.name);
     }
     runTasks(callback) {
-        let len = this._taskCollection.length;
+        const len = this._taskCollection.length;
         let i = 0;
         let task = null;
         let isRunning = true;
-        let runTask = () => {
+        const runTask = () => {
             task = this._taskCollection[i];
             this.sendMessage("running task: " + task.constructor.name);
             this._taskRunner.run(task, (message) => {

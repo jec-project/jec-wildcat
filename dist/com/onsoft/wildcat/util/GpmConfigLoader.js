@@ -30,7 +30,7 @@ class GpmConfigLoader {
         this._archetypePath = archetypePath;
     }
     load(request, success, error) {
-        let loader = new jec_commons_node_1.DefaultJsonLoader();
+        const loader = new jec_commons_node_1.DefaultJsonLoader();
         let gpmPath = this.resolveGpmPath(request);
         loader.load(gpmPath + GpmConfigLoader.GPM_FILE_REF, (data) => {
             this._parser.parse(data, success, error);

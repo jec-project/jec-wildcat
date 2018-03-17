@@ -44,7 +44,7 @@ export class CreateProjectDirectoryTask extends AbstractTask implements Task {
    * @inheritDoc
    */
   public execute(success:(message:string)=>void, error?:(err:any)=>void):void {
-    let projectPath:string = process.cwd() + PathUtils.WORKSPACE +
+    const projectPath:string = process.cwd() + PathUtils.WORKSPACE +
                              this.__request.directory;
     fs.mkdir(projectPath, (err:NodeJS.ErrnoException)=> {
       if(err)

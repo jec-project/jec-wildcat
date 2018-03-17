@@ -27,12 +27,12 @@ class WildcatRequestBuilder {
         return this;
     }
     properties(props) {
-        let builder = new WildcatPropertiesBuilder_1.WildcatPropertiesBuilder();
+        const builder = new WildcatPropertiesBuilder_1.WildcatPropertiesBuilder();
         this._properties = builder.build(props);
         return this;
     }
     build() {
-        let request = new DefaultWildcatRequest_1.DefaultWildcatRequest();
+        const request = new DefaultWildcatRequest_1.DefaultWildcatRequest();
         request.gpm = this._gpm;
         request.directory = this._directory;
         request.contextRoot = this._contextRoot;

@@ -100,16 +100,16 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
   private buildFiles(archetypePaths:ArchetypePath[],
                                                  success:(message:string)=>void,
                                                  error?:(err:any)=>void):void {
-    let gpm:string = this.__request.gpm;
-    let len:number = archetypePaths.length - 1;
+    const gpm:string = this.__request.gpm;
+    const len:number = archetypePaths.length - 1;
+    const projectPath:string = this._serverPath + PathUtils.WORKSPACE +
+                               this.__request.directory;
     let pending:number = len;
     let cursor:number = 1;
-    let projectPath:string = this._serverPath + PathUtils.WORKSPACE +
-                             this.__request.directory;
     for(; cursor <= len; ++cursor) {
-      let archPath:ArchetypePath = archetypePaths[cursor];
-      let file:string = projectPath + archPath.targetPath +
-                        UrlStringsEnum.SLASH + archPath.file;
+      const archPath:ArchetypePath = archetypePaths[cursor];
+      const file:string = projectPath + archPath.targetPath +
+                          UrlStringsEnum.SLASH + archPath.file;
       if(archPath.type === PathType.DIRECTORY) {
         fs.mkdir(file, (err:NodeJS.ErrnoException)=> {
           if(err) {
@@ -133,8 +133,8 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
                 "' project archetype:\n" + err
               );
             } else {
-              let stream:fs.WriteStream = fs.createWriteStream(file);
-              let writableData:any = 
+              const stream:fs.WriteStream = fs.createWriteStream(file);
+              const writableData:any = 
                 this._extensionMap.get(archPath.extension) ?
                 this._propertiesProcessor.mapProperties(data.toString()) :
                 data;
@@ -164,7 +164,7 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
    * @return {string} the resolved path to the archetype.
    */
   private resolveArchetypePath():string {
-    let gpm:string = this.__request.gpm;
+    const gpm:string = this.__request.gpm;
     let archetypePath:string = this._archetypePath ?
                                this._archetypePath :
                                this._serverPath + PathUtils.GPMS_DIRECTORY;
@@ -186,7 +186,7 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
   public setContext(request:WildcatRequest, config:GpmConfig):void {
     super.setContext(request, config);
     this._propertiesProcessor.setContext(request, config);
-    let processedFiles:string[] = config.processedFiles;
+    const processedFiles:string[] = config.processedFiles;
     let len:number = -1;
     if(processedFiles) {
       len = processedFiles.length;
@@ -218,9 +218,9 @@ export class DeployArchetypeTask extends AbstractTask implements Task {
    * @inheritDoc
    */
   public execute(success:(message:string)=>void, error?:(err:any)=>void):void {
-    let gpm:string = this.__request.gpm;
-    let archetypePath:string = this.resolveArchetypePath();
-    let archetypeFiles:ArchetypePath[] = new Array<ArchetypePath>();
+    const gpm:string = this.__request.gpm;
+    const archetypePath:string = this.resolveArchetypePath();
+    const archetypeFiles:ArchetypePath[] = new Array<ArchetypePath>();
     this._walker.process = (file:ArchetypePath)=> {
       archetypeFiles.push(file);
      };

@@ -67,7 +67,7 @@ export class GpmConfigParser {
    * @param {Object} config the configuration object to parse.
    */
   private parseGpm(gpmConfig:GpmConfig, config:any):void {
-    let gpm:Gpm = new Gpm();
+    const gpm:Gpm = new Gpm();
     gpm.version = config.gpm.version;
     gpmConfig.gpm = gpm;
   }
@@ -81,8 +81,8 @@ export class GpmConfigParser {
    * @param {Object} config the configuration object to parse.
    */
   private parseProject(gpmConfig:GpmConfig, config:any):void {
-    let project:Project = new Project();
-    let projectCfg:any = config.project;
+    const project:Project = new Project();
+    const projectCfg:any = config.project;
     project.name = projectCfg.name;
     project.version = projectCfg.version;
     project.title = projectCfg.title;

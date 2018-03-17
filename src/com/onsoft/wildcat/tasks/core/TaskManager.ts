@@ -121,11 +121,11 @@ export class TaskManager {
    *                            process failed.
    */
   public runTasks(callback:(err:any)=>void):void {
-    let len:number = this._taskCollection.length;
+    const len:number = this._taskCollection.length;
     let i:number = 0;
     let task:Task = null;
     let isRunning:boolean = true;
-    let runTask:Function = ()=> {
+    const runTask:Function = ()=> {
       task = this._taskCollection[i];
       this.sendMessage("running task: " + task.constructor.name);
       this._taskRunner.run(

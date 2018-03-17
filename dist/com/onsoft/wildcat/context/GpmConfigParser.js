@@ -13,13 +13,13 @@ class GpmConfigParser {
         this._validator = new DefaultGpmValidator_1.DefaultGpmValidator();
     }
     parseGpm(gpmConfig, config) {
-        let gpm = new Gpm_1.Gpm();
+        const gpm = new Gpm_1.Gpm();
         gpm.version = config.gpm.version;
         gpmConfig.gpm = gpm;
     }
     parseProject(gpmConfig, config) {
-        let project = new Project_1.Project();
-        let projectCfg = config.project;
+        const project = new Project_1.Project();
+        const projectCfg = config.project;
         project.name = projectCfg.name;
         project.version = projectCfg.version;
         project.title = projectCfg.title;

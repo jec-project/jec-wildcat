@@ -57,7 +57,7 @@ export class WildcatPropertiesBuilder {
    *                             Wildcat request.
    */
   public build(config:any):Map<string, any> {
-    let propsMap = new Map<string, any>();
+    const propsMap = new Map<string, any>();
     let prop:string = null;
     for(prop in config) {
       if( prop !== WildcatPropertiesBuilder.GPM &&

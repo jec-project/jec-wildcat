@@ -10,11 +10,10 @@ class DependenciesInstallTask extends AbstractTask_1.AbstractTask {
         super();
     }
     execute(success, error) {
-        let gpm = this.__request.gpm;
-        let commandPath = process.cwd() + PathUtils_1.PathUtils.WORKSPACE +
-            this.__request.directory +
-            jec_commons_1.JecStringsEnum.WEB_APP;
-        let options = {
+        const gpm = this.__request.gpm;
+        const commandPath = process.cwd() + PathUtils_1.PathUtils.WORKSPACE +
+            this.__request.directory + jec_commons_1.JecStringsEnum.WEB_APP;
+        const options = {
             encoding: jec_commons_1.EncodingFormat.UTF8,
             cwd: commandPath
         };

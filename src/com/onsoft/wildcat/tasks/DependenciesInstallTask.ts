@@ -46,11 +46,10 @@ export class DependenciesInstallTask extends AbstractTask implements Task {
    * @inheritDoc
    */
   public execute(success:(message:string)=>void, error?:(err:any)=>void):void {
-    let gpm:string = this.__request.gpm;
-    let commandPath:string = process.cwd() + PathUtils.WORKSPACE +
-                             this.__request.directory +
-                             JecStringsEnum.WEB_APP;
-    let options:ExecOptionsWithStringEncoding = {
+    const gpm:string = this.__request.gpm;
+    const commandPath:string = process.cwd() + PathUtils.WORKSPACE +
+                              this.__request.directory + JecStringsEnum.WEB_APP;
+    const options:ExecOptionsWithStringEncoding = {
       encoding: EncodingFormat.UTF8,
       cwd: commandPath
     };

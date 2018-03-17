@@ -24,15 +24,15 @@ class DeployArchetypeTask extends AbstractTask_1.AbstractTask {
         this._propertiesProcessor = new ArchetypePropertiesProcessor_1.ArchetypePropertiesProcessor();
     }
     buildFiles(archetypePaths, success, error) {
-        let gpm = this.__request.gpm;
-        let len = archetypePaths.length - 1;
+        const gpm = this.__request.gpm;
+        const len = archetypePaths.length - 1;
+        const projectPath = this._serverPath + PathUtils_1.PathUtils.WORKSPACE +
+            this.__request.directory;
         let pending = len;
         let cursor = 1;
-        let projectPath = this._serverPath + PathUtils_1.PathUtils.WORKSPACE +
-            this.__request.directory;
         for (; cursor <= len; ++cursor) {
-            let archPath = archetypePaths[cursor];
-            let file = projectPath + archPath.targetPath +
+            const archPath = archetypePaths[cursor];
+            const file = projectPath + archPath.targetPath +
                 jec_commons_1.UrlStringsEnum.SLASH + archPath.file;
             if (archPath.type === PathType_1.PathType.DIRECTORY) {
                 fs.mkdir(file, (err) => {
@@ -51,8 +51,8 @@ class DeployArchetypeTask extends AbstractTask_1.AbstractTask {
                             "' project archetype:\n" + err);
                     }
                     else {
-                        let stream = fs.createWriteStream(file);
-                        let writableData = this._extensionMap.get(archPath.extension) ?
+                        const stream = fs.createWriteStream(file);
+                        const writableData = this._extensionMap.get(archPath.extension) ?
                             this._propertiesProcessor.mapProperties(data.toString()) :
                             data;
                         fs.writeFile(file, writableData, (err) => {
@@ -70,7 +70,7 @@ class DeployArchetypeTask extends AbstractTask_1.AbstractTask {
         }
     }
     resolveArchetypePath() {
-        let gpm = this.__request.gpm;
+        const gpm = this.__request.gpm;
         let archetypePath = this._archetypePath ?
             this._archetypePath :
             this._serverPath + PathUtils_1.PathUtils.GPMS_DIRECTORY;
@@ -84,7 +84,7 @@ class DeployArchetypeTask extends AbstractTask_1.AbstractTask {
     setContext(request, config) {
         super.setContext(request, config);
         this._propertiesProcessor.setContext(request, config);
-        let processedFiles = config.processedFiles;
+        const processedFiles = config.processedFiles;
         let len = -1;
         if (processedFiles) {
             len = processedFiles.length;
@@ -100,9 +100,9 @@ class DeployArchetypeTask extends AbstractTask_1.AbstractTask {
         return this._archetypePath;
     }
     execute(success, error) {
-        let gpm = this.__request.gpm;
-        let archetypePath = this.resolveArchetypePath();
-        let archetypeFiles = new Array();
+        const gpm = this.__request.gpm;
+        const archetypePath = this.resolveArchetypePath();
+        const archetypeFiles = new Array();
         this._walker.process = (file) => {
             archetypeFiles.push(file);
         };

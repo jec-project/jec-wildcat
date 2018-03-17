@@ -9,7 +9,7 @@ class VscSettingsTask extends AbstractTask_1.AbstractTask {
         super();
     }
     getSettingsTemplate() {
-        let template = `// Place your settings in this file to overwrite default and user settings.
+        const template = `// Place your settings in this file to overwrite default and user settings.
 {
     "editor.rulers": [80],
     "editor.tabSize": 2,
@@ -23,7 +23,7 @@ class VscSettingsTask extends AbstractTask_1.AbstractTask {
         return template;
     }
     getTasksTemplate() {
-        let template = `{
+        const template = `{
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "0.1.0",

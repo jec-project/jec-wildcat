@@ -19,7 +19,7 @@ class DefaultWildcatProcessor {
         this._loader = new GpmConfigLoader_1.GpmConfigLoader();
     }
     sendRequestMessage(request) {
-        let msg = `request properties:
+        const msg = `request properties:
 - gpm=${request.gpm}
 - projectName=${request.projectName}
 - directory=${request.directory}
@@ -27,8 +27,8 @@ class DefaultWildcatProcessor {
         this.sendMessage(msg);
     }
     sendConfigMessage(config) {
-        let project = config.project;
-        let msg = `GPM config loaded:
+        const project = config.project;
+        const msg = `GPM config loaded:
 - GPM version=${config.gpm.version}
 project model:
 - title=${project.title}
@@ -38,8 +38,8 @@ project model:
         this.sendMessage(msg);
     }
     manageTasks(request, config, callback) {
+        const properties = request.properties;
         let optionalTask = false;
-        let properties = request.properties;
         this._taskManager = new TaskManager_1.TaskManager();
         this._taskManager.setContext(request, config);
         this._taskManager.addTask(new CreateProjectDirectoryTask_1.CreateProjectDirectoryTask());
@@ -57,7 +57,7 @@ project model:
         this._taskManager.runTasks(callback);
     }
     createDeployArchetypeTask() {
-        let task = new DeployArchetypeTask_1.DeployArchetypeTask();
+        const task = new DeployArchetypeTask_1.DeployArchetypeTask();
         task.setArchetypePath(this._archetypePath);
         this._taskManager.addTask(task);
     }

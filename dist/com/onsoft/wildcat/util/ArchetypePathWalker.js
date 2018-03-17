@@ -48,8 +48,8 @@ class ArchetypePathWalker {
         });
     }
     buildArchetypePath(path, stats, sourcePathLength) {
-        let archPath = new ArchetypePath_1.ArchetypePath();
-        let targetPath = path.substring(sourcePathLength);
+        const archPath = new ArchetypePath_1.ArchetypePath();
+        const targetPath = path.substring(sourcePathLength);
         let charIndex = path.lastIndexOf(jec_commons_1.UrlStringsEnum.SLASH) + 1;
         archPath.file = path.substring(charIndex);
         archPath.originPath = path;
@@ -67,7 +67,7 @@ class ArchetypePathWalker {
         return archPath;
     }
     walk(path, complete, error) {
-        let operation = new ArchetypePathOperation_1.ArchetypePathOperation();
+        const operation = new ArchetypePathOperation_1.ArchetypePathOperation();
         operation.pending = 1;
         operation.originPath = path;
         this.internalWalk(path, operation, complete, error);

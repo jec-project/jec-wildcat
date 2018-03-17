@@ -101,8 +101,8 @@ export class ArchetypePathWalker {
    */
   private buildArchetypePath(path:string, stats:fs.Stats,
                                         sourcePathLength:number):ArchetypePath {
-    let archPath:ArchetypePath = new ArchetypePath();
-    let targetPath:string = path.substring(sourcePathLength);
+    const archPath:ArchetypePath = new ArchetypePath();
+    const targetPath:string = path.substring(sourcePathLength);
     let charIndex:number = path.lastIndexOf(UrlStringsEnum.SLASH) + 1;
     archPath.file = path.substring(charIndex);
     archPath.originPath = path;
@@ -144,7 +144,7 @@ export class ArchetypePathWalker {
    *                         represents an error message.
    */
   public walk(path:string, complete:()=>void, error:(err:any)=>void):void {
-    let operation:ArchetypePathOperation = new ArchetypePathOperation();
+    const operation:ArchetypePathOperation = new ArchetypePathOperation();
     operation.pending = 1;
     operation.originPath = path;
     this.internalWalk(path, operation, complete, error);

@@ -8,7 +8,7 @@ class CreateProjectDirectoryTask extends AbstractTask_1.AbstractTask {
         super();
     }
     execute(success, error) {
-        let projectPath = process.cwd() + PathUtils_1.PathUtils.WORKSPACE +
+        const projectPath = process.cwd() + PathUtils_1.PathUtils.WORKSPACE +
             this.__request.directory;
         fs.mkdir(projectPath, (err) => {
             if (err)

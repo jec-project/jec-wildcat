@@ -111,7 +111,7 @@ export class WildcatRequestBuilder {
    * <code>WildcatRequest</code> instance.
    */
   public properties(props:any):WildcatRequestBuilder {
-    let builder:WildcatPropertiesBuilder = new WildcatPropertiesBuilder();
+    const builder:WildcatPropertiesBuilder = new WildcatPropertiesBuilder();
     this._properties = builder.build(props);
     return this;
   }
@@ -122,7 +122,7 @@ export class WildcatRequestBuilder {
    * @return {WildcatRequest} a new <code>WildcatRequest</code> instance.
    */
   public build():WildcatRequest {
-    let request:WildcatRequest = new DefaultWildcatRequest();
+    const request:WildcatRequest = new DefaultWildcatRequest();
     request.gpm = this._gpm;
     request.directory = this._directory;
     request.contextRoot = this._contextRoot;
