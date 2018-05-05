@@ -68,5 +68,5 @@ limitations under the License.
 ```
 
 [jec-url]: http://jecproject.org
-[jec-glasscat-url]: https://github.com/pechemann/jec-glasscat
-[jec-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png
+[jec-glasscat-url]: https://github.com/jec-project/jec-glasscat
+[jec-logo]: https://raw.githubusercontent.com/jec-project/JEC/master/assets/jec-logos/jec-logo.png

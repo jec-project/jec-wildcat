@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pechemann/jec-wildcat.git"
+    "url": "git+https://github.com/jec-project/jec-wildcat.git"
   },
   "keywords": [
     "JEC",
@@ -24,7 +24,7 @@
   "author": "Pascal ECHEMANN",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/pechemann/jec-wildcat/issues"
+    "url": "https://github.com/jec-project/jec-wildcat/issues"
   },
   "dependencies": {
     "jec-commons": "^1.1.8",
@@ -33,7 +33,7 @@
     "print-message": "^2.1.0",
     "type-detect": "^4.0.3"
   },
-  "homepage": "https://github.com/pechemann/jec-wildcat#readme",
+  "homepage": "https://github.com/jec-project/jec-wildcat#readme",
   "devDependencies": {
     "@types/fs-extra": "^4.0.0",
     "chai": "^3.5.0",
