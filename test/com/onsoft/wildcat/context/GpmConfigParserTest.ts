@@ -54,10 +54,13 @@ export class GpmConfigParserTest {
     description: "should  return an error object when the GPM file is not a POJO"
   })
   public parseInvalidTest():void {
-    let invalidObject:any = [];
-    this.parser.parse(invalidObject, (data:GpmConfig)=> {}, (err:GpmConfigError)=> {
-      expect(err).to.be.an.instanceOf(GpmConfigError);
-    });
+    const invalidObject:any = [];
+    this.parser.parse(
+      invalidObject, 
+      (data:GpmConfig)=> {}, (err:GpmConfigError)=> {
+        expect(err).to.be.an.instanceOf(GpmConfigError);
+      }
+    );
   }
 
   @Test({
@@ -90,7 +93,9 @@ export class GpmConfigParserTest {
   public processedFilesTest():void {
     this.parser.parse(utils.GPM_FILE, (data:GpmConfig)=> {
       expect(data.processedFiles).to.be.an("array");
-      expect(data.processedFiles).to.have.lengthOf(utils.PROCESSED_FILES.length);
+      expect(
+        data.processedFiles
+      ).to.have.lengthOf(utils.PROCESSED_FILES.length);
       expect(data.processedFiles).to.have.members(utils.PROCESSED_FILES);
     }, (err:any)=> {});
   }

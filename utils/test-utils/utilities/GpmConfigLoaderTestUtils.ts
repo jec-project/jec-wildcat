@@ -24,19 +24,19 @@ import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/
 // Utilities:
 export const ARCHETYPES_PATH:string = process.cwd() + "/utils/test-utils/archetypes/";
 const buildWildcatRequest:Function = function(gpm:string):WildcatRequest {
-  let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
-  let request:WildcatRequest = 
+  const builder:WildcatRequestBuilder = new WildcatRequestBuilder();
+  const request:WildcatRequest = 
       builder.directory(process.cwd() + ARCHETYPES_PATH)
              .gpm(gpm)
              .build();
   return request;
 };
 const buildValidWildcatRequest:Function = function():WildcatRequest {
-  let request:WildcatRequest = buildWildcatRequest("test");
+  const request:WildcatRequest = buildWildcatRequest("test");
   return request;
 };
 const buildInvalidWildcatRequest:Function = function():WildcatRequest {
-  let request:WildcatRequest = buildWildcatRequest("invalid");
+  const request:WildcatRequest = buildWildcatRequest("invalid");
   return request;
 };
 export const VALID_REQUEST:WildcatRequest = buildValidWildcatRequest();

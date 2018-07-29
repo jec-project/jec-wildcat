@@ -46,8 +46,8 @@ export class DependenciesInstallTaskTest {
     timeout: 50000
   })
   public executeTest(@Async done:Function):void {
-    let task:Task = new DependenciesInstallTask();
-    let folderPath:string = utils.PATH + utils.DEPENDENCIES_INSTALL_DIRECTORY;
+    const task:Task = new DependenciesInstallTask();
+    const folderPath:string = utils.PATH + utils.DEPENDENCIES_INSTALL_DIRECTORY;
     utils.REQUEST.directory = utils.DEPENDENCIES_INSTALL_DIRECTORY;
     task.setContext(utils.REQUEST, utils.GPM_CONFIG);
     task.execute((message:string)=> {

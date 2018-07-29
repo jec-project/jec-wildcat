@@ -26,12 +26,12 @@ import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/
 export const FILE:string = "File that contains <% foo %> and <%bar%> propertie.";
 export const RESULT:string = "File that contains foo_val and bar_val propertie.";
 const buildWildcatRequest:Function = function():WildcatRequest {
-  let properties:any = {
+  const properties:any = {
     foo: "foo_val",
     bar: "bar_val"
   };
-  let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
-  let request:WildcatRequest = builder.properties(properties).build();
+  const builder:WildcatRequestBuilder = new WildcatRequestBuilder();
+  const request:WildcatRequest = builder.properties(properties).build();
   return request;
 };
 export const REQUEST:WildcatRequest = buildWildcatRequest();

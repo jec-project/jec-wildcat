@@ -23,7 +23,7 @@ import { Logger, ConsoleLogger } from "jec-commons";
 
 // Utilities:
 export const initLogger:Function = function():void {
-  let logger:Logger = new ConsoleLogger();
+  const logger:Logger = new ConsoleLogger();
   WildcatLoggerProxy.getInstance().setLogger(logger);
 };
 export const resetLogger:Function = function():void {

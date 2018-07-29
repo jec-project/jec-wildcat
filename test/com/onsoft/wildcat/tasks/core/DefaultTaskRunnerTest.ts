@@ -15,16 +15,12 @@
 //   limitations under the License.
 
 import { TestSuite, Test, BeforeAll } from "jec-juta";
-import * as chai from "chai";
-import * as spies from "chai-spies";
+import { expect } from "chai";
+import * as sinon from "sinon";
 import { TaskImpl } from "../../../../../../utils/test-utils/classes/TaskImpl";
 import { DefaultTaskRunner } from "../../../../../../src/com/onsoft/wildcat/tasks/core/DefaultTaskRunner";
 import { TaskRunner } from "../../../../../../src/com/onsoft/wildcat/tasks/core/TaskRunner";
 import * as utils from "../../../../../../utils/test-utils/utilities/TaskTestsUtils";
-
-// Chai declarations:
-const expect:any = chai.expect;
-chai.use(spies);
 
 @TestSuite({
   description: "Test the DefaultTaskRunner methods"
@@ -53,9 +49,10 @@ export class DefaultTaskRunnerTest {
     description: "should call the execute method on the specified task"
   })
   public executeTaskTest():void {
-    let spy:any = chai.spy.on(this.task, "execute");
+    const spy:any = sinon.spy(this.task, "execute");
     this.taskRunner.run(this.task, (message:string)=> {
-      expect(spy).to.have.been.called.once;
+      sinon.assert.calledOnce(spy);
+      sinon.restore();
     });
   }
 }

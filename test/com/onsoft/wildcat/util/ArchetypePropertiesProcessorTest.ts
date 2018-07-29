@@ -28,7 +28,8 @@ export class ArchetypePropertiesProcessorTest {
     description: "should set the right properties in the specified file"
   })
   public mapPropertiesTest():void {
-    let processor:ArchetypePropertiesProcessor = new ArchetypePropertiesProcessor();
+    const processor:ArchetypePropertiesProcessor =
+                                             new ArchetypePropertiesProcessor();
     processor.setContext(utils.REQUEST, null);
     expect(processor.mapProperties(utils.FILE)).to.equal(utils.RESULT);
   }

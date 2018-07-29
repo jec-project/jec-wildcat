@@ -24,8 +24,8 @@ import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/
 
 // Utilities:
 const buildWildcatRequest:Function = function():WildcatRequest {
-  let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
-  let request:WildcatRequest = builder.build();
+  const builder:WildcatRequestBuilder = new WildcatRequestBuilder();
+  const request:WildcatRequest = builder.build();
   return request;
 };
 export const SUCCESS_MSG:string = "Task success";

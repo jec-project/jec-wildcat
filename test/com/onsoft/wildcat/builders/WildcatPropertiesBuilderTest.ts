@@ -28,7 +28,7 @@ export class WildcatPropertiesBuilderTest {
 
   @BeforeAll()
   public init():void {
-    let builder:WildcatPropertiesBuilder = new WildcatPropertiesBuilder();
+    const builder:WildcatPropertiesBuilder = new WildcatPropertiesBuilder();
     this.result = builder.build(utils.PROPERTIES);
   }
 

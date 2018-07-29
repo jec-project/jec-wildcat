@@ -45,8 +45,8 @@ export const GPM_PATH:string = "test";
 export const DEFAULT_ARCHETYPE_PATH:string = process.cwd() + "/public/wildcat/test/archetype";
 export const ARCHETYPE_PATH:string = process.cwd() + "/utils/test-utils/archetypes";
 const buildWildcatRequest:Function = function():WildcatRequest {
-  let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
-  let request:WildcatRequest = builder.build();
+  const builder:WildcatRequestBuilder = new WildcatRequestBuilder();
+  const request:WildcatRequest = builder.build();
   return request;
 };
 export const PATH:string = process.cwd() + PathUtils.WORKSPACE;
@@ -61,7 +61,7 @@ export const deleteProjectFolderAsync:Function = function(dir:string):void {
 };
 export const createPackageFile:Function = function(dir:string):void {
   let fd:number = 0;
-  let webbAppPath:string = PATH + dir + JecStringsEnum.WEB_APP;
+  const webbAppPath:string = PATH + dir + JecStringsEnum.WEB_APP;
   fs.mkdirSync(webbAppPath);
   fd = fs.openSync(webbAppPath + "package.json", "w");
   fs.writeSync(fd, PACKAGE, 0);

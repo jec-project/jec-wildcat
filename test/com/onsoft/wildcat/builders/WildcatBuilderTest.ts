@@ -28,7 +28,7 @@ export class WildcatBuilderTest {
     description: "Should return an instance of DefaultWildcatProcessor"
   })
   public buildTest():void {
-    let builder:WildcatBuilder = new WildcatBuilder();
+    const builder:WildcatBuilder = new WildcatBuilder();
     expect(builder.build()).to.be.an.instanceOf(DefaultWildcatProcessor);
   }
 }

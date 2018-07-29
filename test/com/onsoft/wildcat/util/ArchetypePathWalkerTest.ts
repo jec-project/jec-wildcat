@@ -28,7 +28,7 @@ export class ArchetypePathWalkerTest {
   public numProcessedFiles:number = 0;
 
   public fileProcessor(element:ArchetypePath):void {
-    let ref:string = element.file + element.targetPath;
+    const ref:string = element.file + element.targetPath;
     expect(utils.FILES.indexOf(ref)).not.to.equal(-1);
     this.numProcessedFiles++;
   }
@@ -38,7 +38,7 @@ export class ArchetypePathWalkerTest {
     timeout: 10000
   })
   public walkTest(@Async done):void {
-    let walker:ArchetypePathWalker = new ArchetypePathWalker();
+    const walker:ArchetypePathWalker = new ArchetypePathWalker();
     walker.process = this.fileProcessor.bind(this);
     walker.walk(
       utils.PATH,

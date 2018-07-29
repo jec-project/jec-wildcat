@@ -47,7 +47,7 @@ export class GpmConfigLoaderTest {
     order: 2
   })
   public setArchetypePathTest():void {
-    let loader:GpmConfigLoader = this.loader as GpmConfigLoader;
+    const loader:GpmConfigLoader = this.loader as GpmConfigLoader;
     loader.setArchetypePath(utils.INVALID_PATH);
     expect(loader.getArchetypePath()).to.equal(utils.INVALID_PATH);
     loader.setArchetypePath(null);
@@ -59,7 +59,7 @@ export class GpmConfigLoaderTest {
     order: 3
   })
   public loadTest(@Async done:Function):void {
-    let loader:GpmConfigLoader = this.loader as GpmConfigLoader;
+    const loader:GpmConfigLoader = this.loader as GpmConfigLoader;
     loader.setArchetypePath(utils.ARCHETYPES_PATH);
     this.loader.load(
       utils.VALID_REQUEST,
@@ -86,7 +86,7 @@ export class GpmConfigLoaderTest {
     order: 4
   })
   public loadFailTest(@Async done:Function):void {
-    let loader:GpmConfigLoader = this.loader as GpmConfigLoader;
+    const loader:GpmConfigLoader = this.loader as GpmConfigLoader;
     loader.setArchetypePath(utils.INVALID_PATH);
     this.loader.load(
       utils.INVALID_REQUEST,
@@ -105,7 +105,7 @@ export class GpmConfigLoaderTest {
     order: 5
   })
   public loadJsonFailTest(@Async done:Function):void {
-    let loader:GpmConfigLoader = this.loader as GpmConfigLoader;
+    const loader:GpmConfigLoader = this.loader as GpmConfigLoader;
     loader.setArchetypePath(utils.ARCHETYPES_PATH);
     this.loader.load(
       utils.INVALID_REQUEST,

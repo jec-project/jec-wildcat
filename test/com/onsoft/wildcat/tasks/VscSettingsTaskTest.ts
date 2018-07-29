@@ -20,7 +20,6 @@ import { VscSettingsTask } from "../../../../../src/com/onsoft/wildcat/tasks/Vsc
 import { Task } from "../../../../../src/com/onsoft/wildcat/tasks/core/Task";
 import * as utils from "../../../../../utils/test-utils/utilities/ProjectDirectoryTaskTestUtils";
 import * as fs from "fs";
-import { UrlStringsEnum } from "jec-commons";
 
 @TestSuite({
   description: "Test the VscSettingsTask task"
@@ -43,8 +42,8 @@ export class VscSettingsTaskTest {
     timeout: 10000
   })
   public executeTest(@Async done:Function):void {
-    let task:Task = new VscSettingsTask();
-    let folderPath:string =
+    const task:Task = new VscSettingsTask();
+    const folderPath:string =
                         utils.PATH + utils.VSC_SETTINGS_DIRECTORY + "/.vscode/";
     utils.REQUEST.directory = utils.VSC_SETTINGS_DIRECTORY;
     task.setContext(utils.REQUEST, utils.GPM_CONFIG);

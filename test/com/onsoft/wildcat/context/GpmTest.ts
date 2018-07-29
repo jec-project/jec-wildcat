@@ -27,7 +27,7 @@ export class GpmTest {
     description: "should have a 'version' property set to 'null'"
   })
   public contextRootTest():void {
-    let gpm:Gpm = new Gpm();
+    const gpm:Gpm = new Gpm();
     expect(gpm).to.have.property("version", null);
   }
 }

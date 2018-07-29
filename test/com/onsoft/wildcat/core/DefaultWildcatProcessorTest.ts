@@ -31,7 +31,7 @@ export class DefaultWildcatProcessorTest {
   public processor:DefaultWildcatProcessor = null;
 
   public fileProcessor(element:ArchetypePath):void {
-    let ref:string = element.file + element.targetPath;
+    const ref:string = element.file + element.targetPath;
     expect(utils.FILES.indexOf(ref)).not.to.equal(-1);
   }
 

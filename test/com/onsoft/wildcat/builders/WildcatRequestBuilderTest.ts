@@ -52,7 +52,7 @@ export class WildcatRequestBuilderTest {
   public projectNameTest():void {
     this.builder = new WildcatRequestBuilder();
     this.builder.projectName(utils.PROJECT_NAME);
-    let result:WildcatRequest = this.builder.build();
+    const result:WildcatRequest = this.builder.build();
     expect(result).to.have.property("projectName", utils.PROJECT_NAME);
   }
   
@@ -62,7 +62,7 @@ export class WildcatRequestBuilderTest {
   public gpmTest():void {
     this.builder = new WildcatRequestBuilder();
     this.builder.gpm(utils.GPM);
-    let result:WildcatRequest = this.builder.build();
+    const result:WildcatRequest = this.builder.build();
     expect(result).to.have.property("gpm", utils.GPM);
   }
   
@@ -72,7 +72,7 @@ export class WildcatRequestBuilderTest {
   public directoryTest():void {
     this.builder = new WildcatRequestBuilder();
     this.builder.directory(utils.DIRECTORY);
-    let result:WildcatRequest = this.builder.build();
+    const result:WildcatRequest = this.builder.build();
     expect(result).to.have.property("directory", utils.DIRECTORY);
   }
 
@@ -82,7 +82,7 @@ export class WildcatRequestBuilderTest {
   public contextRootTest():void {
     this.builder = new WildcatRequestBuilder();
     this.builder.contextRoot(utils.CONTEXTROOT);
-    let result:WildcatRequest = this.builder.build();
+    const result:WildcatRequest = this.builder.build();
     expect(result).to.have.property("contextRoot", utils.CONTEXTROOT);
   }
 
@@ -92,8 +92,8 @@ export class WildcatRequestBuilderTest {
   public properties():void {
     this.builder = new WildcatRequestBuilder();
     this.builder.properties(utils.PROPERTIES);
-    let result:WildcatRequest = this.builder.build();
-    let properties:Map<string, any> = result.properties;
+    const result:WildcatRequest = this.builder.build();
+    const properties:Map<string, any> = result.properties;
     expect(properties).to.be.an.instanceOf(Map);
     expect(properties.get("foo")).to.equal(utils.FOO_PROPERTY);
     expect(properties.get("bar")).to.equal(utils.BAR_PROPERTY);

@@ -1,5 +1,24 @@
 # JEC Wildcat Project: Update Release Notes
 
+<a name="jec-wildcat-1.0.9"></a>
+## **1.0.9** (2018-08-29)
+
+### Bug Fixes
+
+### Features
+
+- Updating all dependencies
+- Test cases improvements
+
+<a name="jec-wildcat-1.0.8"></a>
+## **1.0.8** (2018-08-22)
+
+### Bug Fixes
+
+### Features
+
+- Dependencies upgrade
+
 <a name="jec-wildcat-1.0.7"></a>
 ## **1.0.7** (2017-12-26)
 

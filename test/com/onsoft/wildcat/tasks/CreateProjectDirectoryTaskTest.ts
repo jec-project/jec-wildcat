@@ -41,7 +41,7 @@ export class CreateProjectDirectoryTaskTest {
     timeout: 5000
   })
   public executeTest(@Async done:Function):void {
-    let task:Task = new CreateProjectDirectoryTask();
+    const task:Task = new CreateProjectDirectoryTask();
     utils.REQUEST.directory = utils.CREATE_PROJECT_DIRECTORY;
     task.setContext(utils.REQUEST, utils.GPM_CONFIG);
     task.execute((message:string)=> {

@@ -25,17 +25,17 @@ import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/
 // Utilities:
 export const ARCHETYPE_DEST_FOLDER:string = "test";
 const buildWildcatEmptyRequest:Function = function():WildcatRequest {
-  let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
-  let request:WildcatRequest = builder.build();
+  const builder:WildcatRequestBuilder = new WildcatRequestBuilder();
+  const request:WildcatRequest = builder.build();
   return request;
 };
 const buildWildcatRequest:Function = function(gpm:string):WildcatRequest {
-  let properties:any = {
+  const properties:any = {
     foo: "foo_val",
     bar: "bar_val"
   };
-  let builder:WildcatRequestBuilder = new WildcatRequestBuilder();
-  let request:WildcatRequest = 
+  const builder:WildcatRequestBuilder = new WildcatRequestBuilder();
+  const request:WildcatRequest = 
       builder.directory(ARCHETYPE_DEST_FOLDER)
              .gpm(gpm)
              .properties(properties)
@@ -44,12 +44,12 @@ const buildWildcatRequest:Function = function(gpm:string):WildcatRequest {
 };
 export const EMPTY_REQUEST:WildcatRequest = buildWildcatEmptyRequest();
 const buildWildcatInvalidRequest:Function = function():WildcatRequest {
-  let request:WildcatRequest = buildWildcatRequest("invalid");
+  const request:WildcatRequest = buildWildcatRequest("invalid");
   return request;
 };
 export const INVALID_REQUEST:WildcatRequest = buildWildcatInvalidRequest();
 const buildValidWildcatRequest:Function = function():WildcatRequest {
-  let request:WildcatRequest = buildWildcatRequest("test");
+  const request:WildcatRequest = buildWildcatRequest("test");
   request.contextRoot = "test";
   request.projectName = "Test EJP";
   return request;

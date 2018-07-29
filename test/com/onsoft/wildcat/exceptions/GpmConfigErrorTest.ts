@@ -28,7 +28,7 @@ export class GpmConfigErrorTest {
     description: "GpmConfigError should extend Error"
   })
   public gpmTest():void {
-    let error:GpmConfigError = new GpmConfigError(null);
+    const error:GpmConfigError = new GpmConfigError(null);
     expect(error).to.be.instanceOf(Error);
   }
   
@@ -36,7 +36,7 @@ export class GpmConfigErrorTest {
     description: "should return the same string as passed in the class constructor"
   })
   public propertiesTest():void {
-    let error:GpmConfigError = new GpmConfigError(utils.ERROR_MSG);
+    const error:GpmConfigError = new GpmConfigError(utils.ERROR_MSG);
     expect(error.message).to.equal(utils.ERROR_MSG);
   }
 }

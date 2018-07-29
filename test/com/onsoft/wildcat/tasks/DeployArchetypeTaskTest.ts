@@ -32,7 +32,7 @@ export class DeployArchetypeTaskTest {
   public task:Task = null;
 
   public fileProcessor(element:ArchetypePath):void {
-    let ref:string = element.file + element.targetPath;
+    const ref:string = element.file + element.targetPath;
     expect(walkerUtils.FILES.indexOf(ref)).not.to.equal(-1);
   }
 
@@ -75,7 +75,7 @@ export class DeployArchetypeTaskTest {
     order: 2
   })
   public setArchetypePathTest():void {
-    let task:DeployArchetypeTask = this.task as DeployArchetypeTask;
+    const task:DeployArchetypeTask = this.task as DeployArchetypeTask;
     task.setArchetypePath(utils.ARCHETYPE_PATH);
     expect((task).getArchetypePath()).to.equal(utils.ARCHETYPE_PATH);
   }
@@ -87,7 +87,7 @@ export class DeployArchetypeTaskTest {
   })
   public executeTest(@Async done:Function):void {
     let walker:ArchetypePathWalker = null;
-    let task:DeployArchetypeTask = this.task as DeployArchetypeTask;
+    const task:DeployArchetypeTask = this.task as DeployArchetypeTask;
     task.setArchetypePath(utils.ARCHETYPE_PATH);
     task.execute((message:string)=> {
       walker = new ArchetypePathWalker();
