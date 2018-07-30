@@ -5,6 +5,9 @@
 
 ### Bug Fixes
 
+- Adding support for `package-lock.json` in test cases
+- Adding support for the new `JEC-INF` structure in test cases
+
 ### Features
 
 - Updating all dependencies

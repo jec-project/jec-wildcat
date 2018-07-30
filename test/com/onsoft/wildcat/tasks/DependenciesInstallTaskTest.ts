@@ -52,8 +52,8 @@ export class DependenciesInstallTaskTest {
     task.setContext(utils.REQUEST, utils.GPM_CONFIG);
     task.execute((message:string)=> {
       expect(fs.existsSync(folderPath)).to.be.true;
-      expect(fs.existsSync(folderPath + "/webapp/node_modules")).to.be.true;
-      done();
+      expect(fs.existsSync(folderPath + "/node_modules")).to.be.true;
+      done();;
     },
     (err:any)=> {
       assert.fail(err, null, "test should not return an error");

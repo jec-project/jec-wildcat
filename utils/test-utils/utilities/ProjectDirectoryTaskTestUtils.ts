@@ -18,7 +18,6 @@ import * as fs from "fs";
 import { PathUtils } from "../../../src/com/onsoft/wildcat/util/PathUtils";
 import { WildcatRequest } from "../../../src/com/onsoft/wildcat/WildcatRequest";
 import { WildcatRequestBuilder } from "../../../src/com/onsoft/wildcat/builders/WildcatRequestBuilder";
-import { JecStringsEnum } from "jec-commons";
 import * as fse from "fs-extra";
 
 /*!
@@ -61,9 +60,8 @@ export const deleteProjectFolderAsync:Function = function(dir:string):void {
 };
 export const createPackageFile:Function = function(dir:string):void {
   let fd:number = 0;
-  const webbAppPath:string = PATH + dir + JecStringsEnum.WEB_APP;
-  fs.mkdirSync(webbAppPath);
-  fd = fs.openSync(webbAppPath + "package.json", "w");
+  const appPath:string = PATH + dir;
+  fd = fs.openSync(appPath + "/package.json", "w");
   fs.writeSync(fd, PACKAGE, 0);
   fs.closeSync(fd);
 };
